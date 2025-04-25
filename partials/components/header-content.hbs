@@ -21,7 +21,7 @@
                 {{/foreach}}
             </div>
             <div class="gh-header-middle">
-                {{#foreach posts from="2" limit="3"}}
+                {{#foreach posts from="2" limit="2"}}
                     {{> "post-card"}}
                 {{/foreach}}
             </div>
@@ -30,8 +30,8 @@
                     {{> "components/featured" showFeatured=@custom.show_featured_posts limit=6}}
                 {{else}}
                     <div class="gh-featured-feed">
-                        {{#foreach posts from="5" limit="6"}}
-                            {{> "post-card" imageSizes="80px"}}
+                        {{#foreach posts from="4" limit="5"}}
+                            {{> "post-card"}}
                         {{/foreach}}
                     </div>
                 {{/if}}
@@ -72,7 +72,7 @@
             <h1 class="gh-header-title is-title">{{#if @custom.header_text}}{{@custom.header_text}}{{else}}{{@site.description}}{{/if}}</h1>
             <form class="gh-form">
                 {{> "icons/search"}}
-                <button class="gh-form-input" data-ghost-search>Search posts, tags and authors</button>
+                <button class="gh-form-input" data-ghost-search>Search for content</button>
             </form>
         {{/match}}
 
