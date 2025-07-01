@@ -23,17 +23,17 @@
                     {{#match @custom.header_style "Highlight"}}
                         {{#if @custom.show_featured_posts}}
                             {{#match posts.length ">=" 4}}
-                                {{#get "posts" include="authors" limit="16"}}
+                                {{#get "posts" include="authors" limit="50"}}
                                     {{#foreach posts from="5"}}
-                                        {{> "post-card" lazyLoad=true}}
+                                        {{> "post-card" lazyLoad=false}}
                                     {{/foreach}}
                                 {{/get}}
                             {{/match}}
                         {{else}}
                             {{#match posts.length ">=" 10}}
-                                {{#get "posts" include="authors" limit="22"}}
-                                    {{#foreach posts from="11"}}
-                                        {{> "post-card" lazyLoad=true}}
+                                {{#get "posts" include="authors" limit="50"}}
+                                    {{#foreach posts from="9"}}
+                                        {{> "post-card" lazyLoad=false}}
                                     {{/foreach}}
                                 {{/get}}
                             {{/match}}

@@ -1,5 +1,5 @@
 {
-    "name": "source",
+    "name": "source-ticket-playbook-fork",
     "description": "A default theme for the Ghost publishing platform",
     "demo": "https://source.ghost.io",
     "version": "1.5.0",
@@ -61,7 +61,7 @@
         "defaults"
     ],
     "config": {
-        "posts_per_page": 12,
+        "posts_per_page": 40,
         "image_sizes": {
             "xs": {
                 "width": 160

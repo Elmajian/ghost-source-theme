@@ -1189,7 +1189,7 @@ Search                         LOGO                    Login Subscribe
 
 .gh-header.is-highlight .gh-header-left {
     position: relative;
-    grid-column: span 8;
+    grid-column: span 7;
 }
 
 .gh-header.is-highlight .gh-header-left .gh-card {
@@ -1213,13 +1213,18 @@ Search                         LOGO                    Login Subscribe
 .gh-header.is-highlight .gh-header-left .gh-card .gh-card-title {
     font-size: clamp(2.8rem, 1.36vw + 2.25rem, 4rem);
     font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.022em;
+    line-height: 1.2;
+    letter-spacing: 0;
 }
 
 .gh-header.is-highlight .gh-header-left .gh-card .gh-card-excerpt {
     margin-top: clamp(12px, 0.45vw + 10.18px, 16px);
-    font-size: 1.8rem;
+    font-size: 2rem;
+    -webkit-line-clamp: 5;
+}
+
+.gh-header.is-highlight .gh-header-left .gh-card .gh-card-excerpt::after {
+    content: "...";
 }
 
 .gh-header.is-highlight .gh-header-left .gh-card .gh-card-meta:not(:empty) {
@@ -1231,19 +1236,19 @@ Search                         LOGO                    Login Subscribe
     display: flex;
     flex-direction: column;
     gap: var(--grid-gap);
-    grid-column: 9 / span 4;
+    grid-column: 8 / span 4;
 }
 
 .gh-header.is-highlight .gh-header-middle .gh-card:last-child .gh-card-image {
-    display: none;
+    /* display: none; */
 }
 
 .gh-header.is-highlight .gh-header-middle .gh-card .gh-card-excerpt {
-    display: none;
+    /* display: none; */
 }
 
 .gh-header.is-highlight .gh-header-right {
-    grid-column: 13 / -1;
+    grid-column: 12 / -1;
 }
 
 .gh-header.is-highlight .gh-featured {
@@ -1324,7 +1329,7 @@ Search                         LOGO                    Login Subscribe
 
 @media (max-width: 991px) {
     .gh-header.is-highlight .gh-header-middle .gh-card:nth-child(2) .gh-card-image {
-        display: none;
+        /* display: none; */
     }
 }
 
@@ -1345,6 +1350,19 @@ Search                         LOGO                    Login Subscribe
 
     .gh-header.is-highlight .gh-header-middle .gh-card .gh-card-excerpt {
         display: -webkit-box;
+    }
+
+    .gh-header.is-highlight .gh-header-left .gh-card .gh-card-excerpt {
+        font-size: 1.45rem;
+        -webkit-line-clamp: 2;
+    }
+    
+    .gh-header.is-highlight .gh-header-left .gh-card .gh-card-title {
+        font-size: calc(1.9rem * var(--factor, 1));
+    }
+
+    .gh-header.is-highlight .gh-featured-feed .gh-card-title {
+        font-size: calc(1.9rem * var(--factor, 1));
     }
 }
 
@@ -1492,7 +1510,7 @@ Search                         LOGO                    Login Subscribe
 }
 
 .gh-featured-feed .gh-card-image {
-    width: 72px;
+    width: 100px;
     aspect-ratio: 1;
 }
 
@@ -1511,6 +1529,7 @@ Search                         LOGO                    Login Subscribe
 .gh-featured-feed .gh-card-wrapper {
     container-type: inline-size;
     container-name: featured-card-wrapper;
+    width: 100%;
 }
 
 .gh-featured-feed .gh-card-title {
@@ -1526,7 +1545,7 @@ Search                         LOGO                    Login Subscribe
 }
 
 .gh-featured-feed .gh-card-excerpt {
-    display: none;
+    /* display: none; */
 }
 
 .gh-featured-feed .gh-card-meta:not(:empty) {
@@ -1551,6 +1570,16 @@ Search                         LOGO                    Login Subscribe
     .gh-viewport > .gh-featured .gh-featured-feed .gh-card:nth-child(4) {
         display: none;
     }
+
+    .gh-featured-feed .gh-card-link {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gh-featured-feed .gh-card-image {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -1644,7 +1673,7 @@ Search                         LOGO                    Login Subscribe
 /* 11.2. Without sidebar */
 
 .gh-container:not(.has-sidebar) :is(.gh-container-title, .gh-main, .gh-more) {
-    grid-column: 3 / span 12;
+    grid-column: 2 / span 13;
 }
 
 .gh-container.is-list.no-image:not(.has-sidebar) :is(.gh-container-title, .gh-main, .gh-more) {
@@ -1724,7 +1753,8 @@ Search                         LOGO                    Login Subscribe
 }
 
 .gh-container.is-list .gh-card:not(.no-image) .gh-card-wrapper {
-    max-width: 600px;
+    max-width: 900px;
+    align-self: flex-start;
 }
 
 .gh-container.is-list .gh-card-title {
