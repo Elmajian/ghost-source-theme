@@ -30,10 +30,10 @@
                                 {{/get}}
                             {{/match}}
                         {{else}}
-                            {{#match posts.length ">=" 10}}
-                                {{#get "posts" include="authors" limit="50"}}
+                            {{#match posts.length ">=" 9}}
+                                {{#get "posts" include="authors" limit="100"}}
                                     {{#foreach posts from="9"}}
-                                        {{> "post-card" lazyLoad=false}}
+                                        {{> "post-card" lazyLoad=true}}
                                     {{/foreach}}
                                 {{/get}}
                             {{/match}}
